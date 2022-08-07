@@ -8,7 +8,7 @@ function ExpenseItem() {
 
   return (
     <div className="expense-item">
-      <div>{expenseDate.toISOString()}</div>
+      <div>{expenseDate.toLocaleDateString()}</div>
       <div className="expense-item__description">
         <h2>{expenseTitle}:</h2>
         <div className="expense-item_price">${expenseAmount}</div>
