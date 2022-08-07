@@ -10,10 +10,11 @@ html {
 
 body {
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: yellowgreen;
 }
 
 .app {
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
