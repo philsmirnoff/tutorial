@@ -10,14 +10,15 @@ html {
 
 body {
   margin: 0;
-  background-color: yellowgreen;
+  background-color: #3f3f3f;
 }
 
-.app {
+
+/* .app {
   font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
+} */
