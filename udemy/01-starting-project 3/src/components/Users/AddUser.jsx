@@ -17,7 +17,7 @@ const AddUser = (props) => {
     if (+enteredAge < 1) {
       return;
     }
-    console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge);
     // to clear the input fields after submitting the form add value props to the input fields
     setEnteredUsername('');
     setEnteredAge('');
