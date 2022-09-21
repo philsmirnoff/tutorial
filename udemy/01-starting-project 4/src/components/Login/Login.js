@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import AuthContext from '../../store/auth-context';
 
 // 2. separate function that we will pass to useReducer as a reduce function
 const emailReducer = (state, action) => {
@@ -43,7 +44,7 @@ const Login = (props) => {
 
   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {value: '', isValid: null});
 
-
+  const AuthCtx = useContext(AuthContext);
 //   useEffect(() => {
 //    const identifier = setTimeout(() => {
 //     setFormIsValid(
@@ -106,7 +107,7 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     // 6. we pass the emailState to the onLogin function
-    props.onLogin(emailState.value, passwordState.value);
+    AuthCtx.onLogin(emailState.value, passwordState.value);
   };
 
   return (
