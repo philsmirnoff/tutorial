@@ -56,21 +56,40 @@ const Login = (props) => {
 //  };
 //   }, [enteredEmail, enteredPassword]);
 
+
+// we will use eventually useEffect!!
+
+
+// add object destructuring to get the value and isValid properties from the emailState object AND WE WILL USE IT AS OUR DEPENDENCIES IN THE USEEFFECT
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
+  useEffect(() => {
+   const identifier = setTimeout(() => {
+    setFormIsValid(
+      emailIsValid && passwordIsValid
+    );
+  }, 500);
+
+  return () => {
+    clearTimeout(identifier);
+ };
+  }, [emailIsValid, passwordIsValid]);
+
   const emailChangeHandler = (event) => {
     // 9. we use dispatch to change the state of the email
     dispatchEmail({type: 'USER_INPUT', val: event.target.value});
 
-    setFormIsValid(
-      event.target.value.includes('@') && passwordState.isValid
-      );
+    // setFormIsValid(
+    //   event.target.value.includes('@') && passwordState.isValid
+    //   );
   };
 
   const passwordChangeHandler = (event) => {
     dispatchPassword({type: 'USER_INPUT', val: event.target.value});
 // 4 thats where we gonna store the entered vaslue in the state
-    setFormIsValid(
-      emailState.isValid && event.target.value.trim().length > 6
-      );
+    // setFormIsValid(
+    //   emailState.isValid && event.target.value.trim().length > 6
+    //   );
   };
 // 5.
   const validateEmailHandler = () => {
