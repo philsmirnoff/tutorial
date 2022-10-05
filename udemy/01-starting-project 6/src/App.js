@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import MoviesList from './components/MoviesList';
 import './App.css';
@@ -24,7 +24,7 @@ function App() {
       // .then(data => {
 
       // new code
-      async function fetchMovieHandler() {
+      const fetchMovieHandler = useCallback(async () => {
         setIsLoading(true);
         setError(null);
         try {
@@ -49,7 +49,14 @@ function App() {
         setError(error.message);
       };
       setIsLoading(false);
-    }
+    }, []);
+    // we can add an empty array as a second argument to useEffect to make sure that it runs only once
+    // if we add a variable to the array, it will run every time that variable changes
+    // if we add a function to the array, it will run every time that function changes
+    useEffect(() => {
+      fetchMovieHandler();
+    }, [fetchMovieHandler]);
+
 
   // const dummyMovies = [
   //   {
