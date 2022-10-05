@@ -5,18 +5,26 @@ import './App.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
-   function fetchMovieHandler() {
+
     // fetch rturns us a promise that allows us to react to response
     // we will add then. to define the function that will be called
    // once the data is fetched and we can add catch to handle errors
-     fetch('https://swapi.dev/api/films/')
-      .then(response => {
-        // this response argument here is an object with data about the response and we use json() to transform the data into a js object
-        return response.json();
-      })
-      // once the data treansformation is over we get the data as an argument
+   // this response argument here is an object with data about the response and we use json() to transform the data into a js object
+   // once the data treansformation is over we get the data as an argument
       // and wwe can access to the array through the results property and store it in the movies state so we can update later
-      .then(data => {
+
+      // old code
+      // function fetchMovieHandler() {
+      // fetch('https://swapi.dev/api/films/')
+      // .then(response => {
+      //   return response.json();
+      // })
+      // .then(data => {
+
+      // new code
+      async function fetchMovieHandler() {
+        const response = await fetch('https://swapi.dev/api/films/');
+        const data = await response.json();
         const transformedMovies = data.results.map(movieData => {
           return {
             id: movieData.episode_id,
@@ -27,8 +35,8 @@ function App() {
         });
         // setMovies(data.results);
         setMovies(transformedMovies);
-      });
-  }
+      };
+
 
   // const dummyMovies = [
   //   {
@@ -55,6 +63,6 @@ function App() {
       </section>
     </React.Fragment>
   );
-}
+  }
 
 export default App;
