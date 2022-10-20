@@ -1,4 +1,4 @@
-import { configureStore } from 'redux';
+import { createStore } from 'redux';
 
 const counterReducer = (state = { counter: 0 }, action) => {
   if (action.type === 'increment') {
@@ -19,19 +19,6 @@ const counterReducer = (state = { counter: 0 }, action) => {
   return state;
 }
 
-const store = configureStore(counterReducer);
-// console.log(store.getState())
-// // whatever our state changes this function needs to be executed
-// const counterSubscriber = () => {
-//   const latestState = store.getState();
-//   console.log(latestState)
-// }
-
-// store.subscribe(counterSubscriber);
-
-// // dispatching action
-// store.dispatch({ type: 'increment' });
-// store.dispatch({ type: 'decrement' });
-
+const store = createStore(counterReducer);
 
 export default store
