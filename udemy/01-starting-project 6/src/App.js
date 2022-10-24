@@ -34,17 +34,26 @@ function App() {
           throw new Error('Something went wrong!');
         }
         const data = await response.json();
-
-        const transformedMovies = data.results.map(movieData => {
-          return {
-            id: movieData.episode_id,
-            title: movieData.title,
-            openingText: movieData.opening_crawl,
-            releaseDate: movieData.release_date
-          };
+        const loadMovies = [];
+      for (const key in data) {
+        loadMovies.push({
+          id: key,
+          title: data[key].title,
+          openingText: data[key].openingText,
+          releaseDate: data[key].releaseDate,
         });
-        // setMovies(data.results);
-        setMovies(transformedMovies);
+      }
+      setMovies(loadMovies);
+        // const transformedMovies = data.results.map(movieData => {
+        //   return {
+        //     id: movieData.episode_id,
+        //     title: movieData.title,
+        //     openingText: movieData.opening_crawl,
+        //     releaseDate: movieData.release_date
+        //   };
+        // });
+        // // setMovies(data.results);
+        // setMovies(transformedMovies);
 
       } catch (error) {
         setError(error.message);
