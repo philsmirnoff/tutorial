@@ -1,9 +1,16 @@
-import React from 'react'
+import { Fragment } from 'react';
+import { useParams } from 'react-router-dom';
 
 const QuoteDetail = () => {
+  const params = useParams();
+
   return (
-    <div>QuoteDetail</div>
-  )
+    <Fragment>
+      <h1>Quote Detail</h1>
+      <p>{params.quoteId}</p>
+    </Fragment>
+
+         )
 }
 
 export default QuoteDetail
