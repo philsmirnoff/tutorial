@@ -513,7 +513,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.text-red-500 {
+.m-4 {
+  margin: 1rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-blue-700 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
