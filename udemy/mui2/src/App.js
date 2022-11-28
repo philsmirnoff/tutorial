@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import CarRentalIcon from '@mui/icons-material/CarRental';
 import CardTravelIcon from '@mui/icons-material/CardTravel';
 import CurrencyYuanIcon from '@mui/icons-material/CurrencyYuan';
@@ -27,6 +27,9 @@ function App() {
        >
         Outlined
       </Button>
+      <Typography variant="h5">
+        Welcome to MUI
+      </Typography>
     </div>
   );
 }
