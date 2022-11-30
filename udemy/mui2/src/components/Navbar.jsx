@@ -1,8 +1,12 @@
 import React from 'react'
+import Box from '@mui/material/Box';
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <Box
+    bgcolor={'pink'}>
+    Navbar
+   </Box>
   )
 }
 
