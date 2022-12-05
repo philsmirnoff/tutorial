@@ -18,7 +18,8 @@ const Sidebar = () => {
        p={2}
        sx={{ display: {xs: "none", sm: 'block'}}}
        >
-         <List>
+        <Box position="fixed">
+        <List>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#home">
               <ListItemIcon>
@@ -76,7 +77,7 @@ const Sidebar = () => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#profile">
+            <ListItemButton component="a" href="#darkmode">
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
@@ -84,6 +85,9 @@ const Sidebar = () => {
             </ListItemButton>
           </ListItem>
         </List>
+
+
+        </Box>
       </Box>
   )
 }
