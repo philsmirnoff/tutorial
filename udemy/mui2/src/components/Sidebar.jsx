@@ -10,10 +10,21 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ModeNight from '@mui/icons-material/ModeNight';
 
-const Sidebar = () => {
+const Sidebar = ({mode, setMode}) => {
+  const handleSwitch = () => {
+    if (mode === 'light') {
+      setMode('dark')
+    }
+    else {
+      setMode('light')
+    }
+  }
+
+
   return (
     <Box
-       bgcolor={'orange'}
+      //  bgcolor={'orange'}
+      bgcolor={"background.default"} color={"text.primary"}
        flex={1}
        p={2}
        sx={{ display: {xs: "none", sm: 'block'}}}
@@ -81,7 +92,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
-              <Switch />
+              <Switch onChange={handleSwitch} />
             </ListItemButton>
           </ListItem>
         </List>

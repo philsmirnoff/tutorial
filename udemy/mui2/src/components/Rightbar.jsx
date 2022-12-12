@@ -10,7 +10,8 @@ import { List, ListItem, ListItemAvatar, ListItemText, Divider } from '@mui/mate
 const Rightbar = () => {
   return (
     <Box
-      bgcolor={'pink'}
+      // bgcolor={'pink'}
+      bgcolor={"background.default"} color={"text.primary"}
       flex={2}
       p={2}
       sx={{ display: {xs: "none", sm: 'block'}}}>
