@@ -1,0 +1,11 @@
+@import "../variables/Variables.scss";
+
+.mainPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $redColor;
+  }
+}
