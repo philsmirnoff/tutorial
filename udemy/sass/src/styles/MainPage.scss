@@ -1,5 +1,6 @@
 @import "../variables/Variables.scss";
 
+
 .mainPage {
   display: flex;
   justify-content: center;
@@ -8,4 +9,9 @@
   h1 {
     color: $redColor;
   }
+}
+
+
+.button {
+ @include buttonStyle($redColor, 35px);
 }
